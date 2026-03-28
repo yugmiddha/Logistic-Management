@@ -87,7 +87,14 @@ async function createNewShipment() {
 
 async function fetchFromBackend() {
     if (!userAddress) return;
-    const response = await fetch(`http://localhost:5000/api/shipments/${userAddress}`);
+    // Change this line in fetchFromBackend()
+    const response = await fetch(`/api/shipments/${userAddress}`);
+
+    if (!response.ok) {
+        console.error("Backend Error:", await response.text());
+        return;
+    }
+    
     const data = await response.json();
     const listDiv = document.getElementById("list");
     listDiv.innerHTML = "";
