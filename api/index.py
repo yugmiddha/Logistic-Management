@@ -9,7 +9,7 @@ CORS(app)
 
 # IMPORTANT: For Vercel, use a real RPC URL (Infura or Alchemy) 
 # Localhost (127.0.0.1) will NOT work on the internet.
-RPC_URL = "https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY" 
+RPC_URL = "https://eth-mainnet.g.alchemy.com/v2/Yg2XWKjbbgVc2T2kiuk9g" 
 w3 = Web3(Web3.HTTPProvider(RPC_URL))
 CONTRACT_ADDRESS = "0xEfF34463662089fF20569E7AAa443892d0cF16D2"
 
