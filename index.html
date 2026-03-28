@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Logistics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <style>
+        .card { border: 1px solid #444; padding: 15px; margin-bottom: 10px; border-radius: 8px; }
+        .status-badge { padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; }
+        .delivered { background: #28a745; color: white; }
+        .pending { background: #ffc107; color: black; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    </style>
+</head>
+<body>
+    <h1>🚚 Logistics Tracker</h1>
+    <button id="connectBtn">Connect Wallet</button>
+    <p id="walletDisplay">Address: Not Connected</p>
+
+    <hr>
+
+    <div class="grid">
+        <section>
+            <h3>Create Shipment</h3>
+            <input type="text" id="destAddr" placeholder="Receiver Address">
+            <input type="number" id="dist" placeholder="Distance (km)">
+            <input type="number" id="price" placeholder="Amount (ETH)">
+            <button onclick="createNewShipment()">Send & Create</button>
+        </section>
+
+        <section>
+            <h3>Track Shipments</h3>
+            <button onclick="fetchFromBackend()">Refresh My Shipments</button>
+            <div id="list"></div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
